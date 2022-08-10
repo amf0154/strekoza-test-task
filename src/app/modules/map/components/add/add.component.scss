@@ -1,0 +1,23 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.error {
+    height: 20px;
+    color: red;
+    font-weight: bold;
+}
+
+.important {
+    color: red;
+}
+
+.coordinate-button {
+    padding-bottom: 20px;
+}
+
+.error-border {
+    border: 1px red solid;
+}

@@ -1,0 +1,114 @@
+<h2 mat-dialog-title>Добавление новой точки</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="addingForm">
+    <div class="card-body col-md-12">
+      <div class="form-group">
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="name"
+              >Название точки <span class="important">*</span></label
+            >
+            <input
+              type="text"
+              [ngClass]="{ 'error-border': submitted && f['name'].errors }"
+              class="form-control"
+              id="name"
+              formControlName="name"
+              placeholder=""
+            />
+            <div class="error">
+              <div *ngIf="submitted && f['name'].errors">
+                <div *ngIf="f['name']['errors']['required']">
+                  Введите название точки
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="hint">Подсказка (hint)</label>
+            <input
+              type="text"
+              [ngClass]="{ 'error-border': submitted && f['hint'].errors }"
+              class="form-control"
+              id="hint"
+              formControlName="hint"
+              placeholder=""
+            />
+            <div class="error">
+              <div *ngIf="submitted && f['hint'].errors">
+                <div *ngIf="f['hint']['errors']['required']">
+                  Введите подсказку
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group col-md-12 mt-3 mb-3">
+        <textarea
+          class="form-control"
+          formControlName="description"
+          rows="5"
+          placeholder="Описание"
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="device_type">Координаты датчика</label>
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="location_lat">Широта</label>
+            <input
+              type="number"
+              formControlName="location_lat"
+              class="form-control"
+              id="location_lat"
+              placeholder="52.465824"
+            />
+            <div class="error">
+              <div *ngIf="submitted && f['location_lat'].errors">
+                <div *ngIf="f['location_lat']['errors']['required']">
+                  Введите координату широты
+                </div>
+                <div
+                  *ngIf="
+                    !f['location_lat']['errors']['required'] &&
+                    f['location_lat']['errors']['emptySpaces']
+                  "
+                >
+                  Введите корректно координаты
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="location_long">Долгота</label>
+            <input
+              type="number"
+              formControlName="location_long"
+              class="form-control"
+              id="location_long"
+              placeholder="30.816873"
+            />
+            <div class="error">
+              <div *ngIf="submitted && f['location_long'].errors">
+                <div *ngIf="f['location_long']['errors']['required']">
+                  Введите координату долготы
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button type="button" mat-button mat-dialog-close class="btn btn-danger">
+    Отмена
+  </button>
+  <button type="button" mat-button (click)="save()" class="btn btn-success">
+    Сохранить
+  </button>
+</mat-dialog-actions>

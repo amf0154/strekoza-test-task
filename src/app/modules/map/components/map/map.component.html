@@ -1,0 +1,24 @@
+<section>
+  <div class="control-buttons">
+    <button type="button" (click)="addPoint()" class="btn btn-secondary">
+      Добавить точку
+    </button>
+    <button type="button" (click)="control()" class="btn btn-secondary">
+        Управление
+      </button>
+  </div>
+  <div class="container-map">
+    <ya-map
+      [center]="initialMapPosition"
+      [zoom]="initialMapZoom"
+      (ready)="onMapReady($event)"
+    >
+      <ng-container *ngFor="let coordinate of (data.$coordinates | async)">
+        <ya-placemark
+          [geometry]="coordinate.location"
+          [properties]="coordinate.hint"
+        ></ya-placemark>
+      </ng-container>
+    </ya-map>
+  </div>
+</section>
