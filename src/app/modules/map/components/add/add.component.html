@@ -57,7 +57,7 @@
       <div class="form-group">
         <label for="device_type">Координаты датчика</label>
         <div class="row">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-4">
             <label for="location_lat">Широта</label>
             <input
               type="number"
@@ -82,7 +82,7 @@
               </div>
             </div>
           </div>
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-4">
             <label for="location_long">Долгота</label>
             <input
               type="number"
@@ -97,6 +97,13 @@
                   Введите координату долготы
                 </div>
               </div>
+            </div>
+          </div>
+          <div class="form-group col-md-4">
+            <div class="coordinate-button">
+              <button (click)="choosePoint()" type="button" class="btn btn-info">
+                выбрать на карте
+              </button>
             </div>
           </div>
         </div>

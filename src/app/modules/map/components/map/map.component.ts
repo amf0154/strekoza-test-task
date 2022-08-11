@@ -17,9 +17,7 @@ export class MapComponent {
     public readonly data: DataService
   ) {}
 
-  public readonly initialMapPosition = [55.759425, 37.612926];
   public map: ymaps.Map | any;
-  public readonly initialMapZoom = 17;
 
   public onMapReady(event: YaReadyEvent<ymaps.Map>): void {
     this.map = event.target;

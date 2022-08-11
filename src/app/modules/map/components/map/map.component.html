@@ -9,8 +9,8 @@
   </div>
   <div class="container-map">
     <ya-map
-      [center]="initialMapPosition"
-      [zoom]="initialMapZoom"
+      [center]="data.initialMapPosition"
+      [zoom]="data.initialMapZoom"
       (ready)="onMapReady($event)"
     >
       <ng-container *ngFor="let coordinate of (data.$coordinates | async)">

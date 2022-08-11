@@ -8,6 +8,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditComponent } from './components/edit/edit.component';
+import { PointComponent } from './components/point/point.component';
+import { ToastrModule } from 'ngx-toastr';
 
 const mapConfig: YaConfig = {
   apikey: 'API_KEY',
@@ -18,7 +20,8 @@ const mapConfig: YaConfig = {
   declarations: [
     MapComponent,
     AddComponent,
-    EditComponent
+    EditComponent,
+    PointComponent
   ],
   imports: [
     CommonModule,
@@ -26,6 +29,7 @@ const mapConfig: YaConfig = {
     MatDialogModule,
     MatButtonModule,
     AngularYandexMapsModule.forRoot(mapConfig),
+    ToastrModule,
     FormsModule,
     ReactiveFormsModule
   ],

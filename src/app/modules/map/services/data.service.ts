@@ -9,6 +9,8 @@ export class DataService {
   
   constructor() {}
 
+  public readonly initialMapPosition = [55.759425, 37.612926];
+  public readonly initialMapZoom = 17;
   private readonly storageKey = 'mapData';
   private coordinates: Array<Coordinate> = [
     {
